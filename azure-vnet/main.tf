@@ -6,6 +6,7 @@ provider "azurerm" {
 resource "azurerm_resource_group" "default" {
   name     = var.rgname
   location = "Australia East"
+}
 
 resource "azurerm_virtual_network" "main" {
 name                = var.network
