@@ -16,7 +16,9 @@ variable "subnetname2" {
 }
 
 variable "subnet_address" {
+  type    = list(string)
 }
 
 variable "subnet_address2" {
+  type    = list(string)
 }
