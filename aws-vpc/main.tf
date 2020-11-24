@@ -5,7 +5,7 @@ module "vpc" {
 
   cidr = var.cidr
 
-  azs             = var.azs
+  azs             = ["ap-southeast-2a", "ap-southeast-2b", "ap-southeast-2c"]
   private_subnets = var.private_subnets
   public_subnets  = var.public_subnets
 
