@@ -1,15 +1,14 @@
-variable "privsubnets" {
-  type    = list(string)
+variable "AWS_REGION" {    
 }
 
-variable "pubsubnets" {
-  type    = list(string)
+variable "cidr" {    
 }
 
-variable "name" {
-  type    = string
+variable "tag" {    
 }
 
-variable "cidr" {
-  type    = string
+variable "pubsubnet1" {    
+}
+
+variable "pubsubnet2" {    
 }
