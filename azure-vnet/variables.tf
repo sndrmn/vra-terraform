@@ -12,5 +12,11 @@ variable "vnet_address" {
 variable "subnetname" {
 }
 
+variable "subnetname2" {
+}
+
 variable "subnet_address" {
+}
+
+variable "subnet_address2" {
 }

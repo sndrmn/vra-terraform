@@ -17,7 +17,13 @@ address_space       = var.vnet_address
 
 resource "azurerm_subnet" "internal" {
 name                    = var.subnetname
-resource_group_name     = var.rgname
+resource_group_name     = azurerm_resource_group.default.name
 virtual_network_name    = azurerm_virtual_network.main.name
-address_prefixes          = var.subnet_address
+address_prefixes        = var.subnet_address
 }
+
+resource "azurerm_subnet" "internal2" {
+name                    = var.subnetname2
+resource_group_name     = azurerm_resource_group.default.name
+virtual_network_name    = azurerm_virtual_network.main.name
+address_prefixes        = var.subnet_address2
