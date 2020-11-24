@@ -5,6 +5,7 @@ provider "azurerm" {
 
 resource "azurerm_virtual_network" "main" {
 name                = var.network
+location            = "Australia East"
 resource_group_name = var.rgname
 address_space       = var.vnet_address
 }
@@ -12,6 +13,6 @@ address_space       = var.vnet_address
 resource "azurerm_subnet" "internal" {
 name                    = var.subnetname
 resource_group_name     = var.rgname
-virtual_network_name    = "${azurerm_virtual_network.main.name}"
+virtual_network_name    = azurerm_virtual_network.main.name
 address_prefix          = var.subnet_address
 }
