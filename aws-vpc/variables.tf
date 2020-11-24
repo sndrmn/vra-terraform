@@ -13,15 +13,15 @@ variable "name" {
 
 variable "cidr" {
   type = string
-  default = "5.0.0.0/16"
+  default = "172.31.0.0/16"
 }
 
 variable "private_subnets" {
   type    = list(string)
-  default = ["5.0.1.0/24", "5.0.2.0/24", "5.0.3.0/24"]
+  default = ["172.31.10.0/24", "172.31.20.0/24", "172.31.30.0/24"]
 }
 
 variable "public_subnets" {
   type    = list(string)
-  default = ["5.0.101.0/24", "5.0.102.0/24", "5.0.103.0/24"]
+  default = ["172.31.40.0/24", "172.31.50.0/24", "172.31.60.0/24"]
 }
