@@ -5,6 +5,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "example" {
   name     = "rg-vmwapj-anz"
+  location = "Australia East"
 }
 
 resource "azurerm_sql_firewall_rule" "fwl" {
