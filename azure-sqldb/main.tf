@@ -18,7 +18,7 @@ resource "azurerm_sql_server" "main" {
 }
 
 resource "azurerm_sql_firewall_rule" "main" {
-  name                = "AlllowAzureServices"s
+  name                = "AlllowAzureServices"
   resource_group_name = azurerm_resource_group.main.name
   server_name         = azurerm_sql_server.main.name
   start_ip_address    = "0.0.0.0"
