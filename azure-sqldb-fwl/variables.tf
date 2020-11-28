@@ -1,5 +1,0 @@
-variable "server" {
-}
-
-variable "rgname" {
-}
