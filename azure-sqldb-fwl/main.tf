@@ -4,7 +4,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = "rg-vmwapj-anz"
+  name     = var.rgname
   location = "Australia East"
 }
 

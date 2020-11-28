@@ -1,2 +1,5 @@
 variable "server" {
 }
+
+variable "rgname" {
+}
