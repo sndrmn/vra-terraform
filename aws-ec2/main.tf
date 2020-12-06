@@ -5,9 +5,8 @@ provider "aws" {
 locals {
   user_data = <<EOF
 <powershell>
-mkdir c:\bin
-Invoke-WebRequest -Uri "https://repo.saltstack.com/windows/Salt-Minion-Latest-Py3-x86-Setup.exe" -OutFile "c:\bin\Salt-Minion-Latest-Py3-x86-Setup.exe"
-cd c:\bin ; Salt-Minion-Latest-Py3-x86-Setup.exe /S /minion-name=projectrock-web01.vmware.education /master=projectrock-saltmaster.vmware.education /start-service=1"
+Invoke-WebRequest -Uri "https://repo.saltstack.com/windows/Salt-Minion-Latest-Py3-x86-Setup.exe" -OutFile "c:\windows\temp\Salt-Minion-Latest-Py3-x86-Setup.exe"
+& "c:\windows\temp\Salt-Minion-Latest-Py3-x86-Setup.exe" "/S /minion-name=projectrock-web01.vmware.education /master=projectrock-saltmaster.vmware.education /start-service=1" 
 </powershell>
 EOF
 }
