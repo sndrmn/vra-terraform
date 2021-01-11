@@ -6,7 +6,7 @@ locals {
   user_data = <<-EOF
 <powershell>
 Invoke-WebRequest -Uri "https://repo.saltstack.com/windows/Salt-Minion-3002.2-Py3-AMD64.msi" -OutFile "c:\windows\temp\Salt-Minion-3002.2-Py3-AMD64.msi" 
-msiexec /i c:\windows\temp\Salt-Minion-3002.2-Py3-AMD64.msi /quiet /norestart MASTER=projectrock-saltmaster.vmware.education MINION_ID= "${var.hostname}"
+msiexec /i c:\windows\temp\Salt-Minion-3002.2-Py3-AMD64.msi /quiet /norestart MASTER=projectrock-saltmaster.vmware.education MINION_ID=${var.hostname}
 </powershell>
 EOF
 }
