@@ -7,3 +7,8 @@ variable "keyname" {
   type = string
   default = "sveenstra-aws"
 }
+
+variable "hostname" {
+  type = string
+  default = "projectrock-win01"
+}

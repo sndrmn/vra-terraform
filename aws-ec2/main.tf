@@ -3,10 +3,10 @@ provider "aws" {
 }
 
 locals {
-  user_data = <<EOF
+  user_data = <<-EOF
 <powershell>
-Invoke-WebRequest -Uri "https://repo.saltstack.com/windows/Salt-Minion-Latest-Py3-x86-Setup.exe" -OutFile "c:\windows\temp\Salt-Minion-Latest-Py3-x86-Setup.exe"
-& "c:\windows\temp\Salt-Minion-Latest-Py3-x86-Setup.exe" "/S /minion-name=projectrock-web01.vmware.education /master=projectrock-saltmaster.vmware.education /start-service=1" 
+Invoke-WebRequest -Uri "https://repo.saltstack.com/windows/Salt-Minion-3002.2-Py3-AMD64.msi" -OutFile "c:\windows\temp\Salt-Minion-3002.2-Py3-AMD64.msi" 
+msiexec /i c:\windows\temp\Salt-Minion-3002.2-Py3-AMD64.msi /quiet /norestart MASTER=projectrock-saltmaster.vmware.education MINION_ID=var.hostname
 </powershell>
 EOF
 }
@@ -18,7 +18,7 @@ resource "aws_instance" "web" {
   key_name      = var.keyname 
   associate_public_ip_address = true
   user_data_base64            = base64encode(local.user_data)
-  vpc_security_group_ids      = ["sg-0268bc4e33ad729c2"]
+  vpc_security_group_ids      = ["sg-0da46168d14f05715"]
   root_block_device {
       volume_size = "80"
   }
