@@ -7,6 +7,7 @@ locals {
 <powershell>
 Invoke-WebRequest -Uri "https://repo.saltstack.com/windows/Salt-Minion-3002.2-Py3-AMD64.msi" -OutFile "c:\windows\temp\Salt-Minion-3002.2-Py3-AMD64.msi" 
 msiexec /i c:\windows\temp\Salt-Minion-3002.2-Py3-AMD64.msi /quiet /norestart MASTER=projectrock-saltmaster.vmware.education MINION_ID=${var.hostname}
+Rename-Computer -NewName "${var.hostname}"
 </powershell>
 EOF
 }
@@ -23,6 +24,6 @@ resource "aws_instance" "web" {
       volume_size = "80"
   }
   tags = {
-    Name = "SaltStack Testing"
+    Name = "SaltStack Windows Demo"
   }
 }
