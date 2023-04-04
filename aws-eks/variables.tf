@@ -25,6 +25,6 @@ variable "vpc_public_subnets" {
 }
 
 variable "eksnodegroupinstance" {
-  type        = list(string)
-  default     = ["t3.medium"]
+  type        = string
+  default     = "t3.medium"
 }
