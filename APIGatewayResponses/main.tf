@@ -7,6 +7,7 @@ resource "aws_api_gateway_integration_response" "post" {
   resource_id = var.resource
   http_method = "POST"
   status_code = "200"
+  depends_on = [aws_api_gateway_method_response.post]
   response_parameters = {
     "method.response.header.Access-Control-Allow-Origin" = var.value
   }
