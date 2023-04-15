@@ -10,6 +10,7 @@ resource "aws_api_gateway_integration_response" "post" {
   response_parameters = {
     "method.response.header.Access-Control-Allow-Origin" = "'*'"
 }
+
 }
 
 resource "aws_api_gateway_method_response" "post" {
