@@ -1,9 +1,14 @@
 variable "rest" {
     type = string
-    default = "rmy6cb7uyd"
+    default = "lqm3utew94"
 }
 
 variable "resource" {
     type = string
-    default = "2lgyu94mf1"
+    default = "bbiy4vt0u7"
+}
+
+variable "value" {
+    type = string
+    default = "'*'"
 }

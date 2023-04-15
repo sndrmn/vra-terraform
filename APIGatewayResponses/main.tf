@@ -8,8 +8,8 @@ resource "aws_api_gateway_integration_response" "post" {
   http_method = "POST"
   status_code = "200"
   response_parameters = {
-    "method.response.header.Access-Control-Allow-Origin" = "'*'"
-}
+    "method.response.header.Access-Control-Allow-Origin" = var.value
+  }
 }
 
 resource "aws_api_gateway_method_response" "post" {
